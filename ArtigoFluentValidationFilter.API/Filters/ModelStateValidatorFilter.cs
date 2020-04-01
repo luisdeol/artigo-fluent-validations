@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ArtigoFluentValidationFilter.API.Application.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace ArtigoFluentValidationFilter.API.Filters
         {
             if (!context.ModelState.IsValid)
             {
-                var errors = context.ModelState.GetErrorsMessages();
+                var errors = new ErrosViewModel(context.ModelState.GetErrorsMessages());
 
                 context.Result = new BadRequestObjectResult(errors);
             }

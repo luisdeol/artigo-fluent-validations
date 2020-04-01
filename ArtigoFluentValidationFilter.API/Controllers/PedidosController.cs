@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 
 namespace ArtigoFluentValidationFilter.API.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
     public class PedidosController : ControllerBase
     {
